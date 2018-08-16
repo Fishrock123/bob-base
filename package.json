@@ -1,0 +1,26 @@
+{
+  "name": "bob-base",
+  "version": "0.0.0",
+  "description": "Base C++ virtual class header for the BOB streaming protocol.",
+  "main": "include_dirs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fishrock123/bob-base.git"
+  },
+  "keywords": [
+    "BOB",
+    "bob",
+    "c++",
+    "header",
+    "base"
+  ],
+  "author": "Jeremiah Senkpiel <fishrock123@rocketmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fishrock123/bob-base/issues"
+  },
+  "homepage": "https://github.com/Fishrock123/bob-base#readme"
+}
