@@ -10,6 +10,12 @@ In your `binding.gyp`:
   ]
 ```
 
+In your C++:
+
+```cpp
+#include <bob.h>
+```
+
 ## Usage
 
 ### Base class
@@ -17,26 +23,26 @@ In your `binding.gyp`:
 All C++ BOB interfaces *must* inherit from `BOB::Base` and implement its virtual functions:
 
 ```cpp
-class My_Sink : public Bob_Base {
+class My_Sink : public BOB::Base {
  public:
   My_Sink(<options>);
   virtual ~My_Sink();
 
-  virtual Bob_Base* BindSource(Bob_Base* source);
-  virtual void BindSink(Bob_Base* sink);
+  virtual BOB::Base* BindSource(BOB::Base* source);
+  virtual void BindSink(BOB::Base* sink);
   virtual void Next(int status, void** error, char* data, size_t bytes);
   virtual void Pull(void** error, char* data, size_t size);
 
  private:
-  Bob_Base* source_;
+  BOB::Base* source_;
 };
 ```
 
 Sinks should implement `BindSource` roughly as so:
 
 ```cpp
-Bob_Base* My_Sink::BindSource(Bob_Base* source) {
-  source->BindSink(static_cast<Bob_Base*>(this));
+BOB::Base* My_Sink::BindSource(BOB::Base* source) {
+  source->BindSink(static_cast<BOB::Base*>(this));
   source_ = source;
 
   return this;
@@ -46,7 +52,7 @@ Bob_Base* My_Sink::BindSource(Bob_Base* source) {
 Sources should implement `BindSink` roughly as so:
 
 ```cpp
-void FS_Source::BindSink(Bob_Base* sink) {
+void FS_Source::BindSink(BOB::Base* sink) {
   sink_ = sink;
 }
 ```
