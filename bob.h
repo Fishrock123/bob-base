@@ -11,7 +11,7 @@ enum Status {
 
 class Base {
  public:
-  virtual ~Base();
+  virtual ~Base() = 0;
 
   virtual Base* BindSource(Base* source) = 0;
   virtual void BindSink(Base* sink) = 0;
