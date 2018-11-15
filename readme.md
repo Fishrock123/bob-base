@@ -1,4 +1,4 @@
-# BOB Status
+# BOB Base
 
 C++ base class & status codes enum for the [BOB](https://github.com/Fishrock123/bob) streaming protocol.
 
